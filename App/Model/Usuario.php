@@ -19,12 +19,14 @@ class Usuario
     private $numero;
     private $cep;
     private $cidade;
+    private $bairro;
     private $uf;
     private $circuito;
     private $dtBatismo;
     private $dtNascimento;
     private $status;  //not null (ativo,inativo)
     private $obs;
+    private $telefone;
 
     /**
      * @return mixed
@@ -157,6 +159,22 @@ class Usuario
     /**
      * @return mixed
      */
+    public function getBairro()
+    {
+        return $this->bairro;
+    }
+
+    /**
+     * @param mixed $bairro
+     */
+    public function setBairro($bairro)
+    {
+        $this->bairro = $bairro;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getUf()
     {
         return $this->uf;
@@ -249,4 +267,21 @@ class Usuario
     {
         $this->obs = $obs;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTelefone()
+    {
+        return $this->telefone;
+    }
+
+    /**
+     * @param mixed $telefone
+     */
+    public function setTelefone($telefone)
+    {
+        $this->telefone = $telefone;
+    }
+
 }

@@ -42,8 +42,6 @@ class Login
         $this->username = $username;
     }
 
-
-
     /**
      * @return mixed
      */
