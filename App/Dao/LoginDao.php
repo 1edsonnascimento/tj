@@ -2,6 +2,8 @@
 
 namespace App\Dao;
 
+use App\Helper;
+
 class LoginDao extends Conexao
 {
     public function inserir($usuario){
@@ -53,16 +55,17 @@ class LoginDao extends Conexao
 
 
     public function logar($login){
-        $sql = "select * from login where username = :username and senha = :senha";
+        $sql = "select l.idLogin, l.username,l.permissoes, u.nome from login as l inner join usuario as u on l.idUsuario = u.idUsuario where username = :username and senha = :senha";
         try{
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":username",$login->getUsername());
-            $consulta->bindValue(":senha",$login->getSenha());
+            $consulta->bindValue(":senha",Helper::criptografar($login->getSenha()));
             $consulta->execute();
             $resultado = $consulta->fetch();
             session_start();
             $_SESSION['idLogin'] = $resultado['idLogin'];
-            $_SESSION['permissao'] = $resultado['permissao'];
+            $_SESSION['permissoes'] = $resultado['permissoes'];
+            $_SESSION['nome'] = $resultado['nome'];
             return $resultado;
         }catch (\PDOException $e){
             echo "<div class='alert alert-danger'>{$e->getMessage()}</div>";
@@ -73,13 +76,13 @@ class LoginDao extends Conexao
     public function logoff(){
         session_start();
         unset($_SESSION['idLogin']);
-        unset($_SESSION['permissao']);
+        unset($_SESSION['permissoes']);
         session_destroy();
         header("Location: login.php");
     }
 
     public function statusLogin(){
-        if(empty($_SESSION['id']))
+        if(empty($_SESSION['idLogin']))
             header("Location: login.php");
     }
 }

@@ -15,11 +15,11 @@ class Conexao
     private $host = "localhost";
     private $db = "tj";
     private $user = "root";
-    private $senha = "Suporte99";
+    private $senha = "1234";
 
     public function __construct()
     {
         $this->conexao = new \PDO("mysql:host={$this->host};dbname={$this->db}",$this->user, $this->senha);
-        $this->conexao->setAttribute(\PDP::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
+        $this->conexao->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
     }
 }

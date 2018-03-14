@@ -32,7 +32,7 @@ foreign key(idUsuario) references usuario(idUsuario)
 
 create table login(
 idLogin int not null auto_increment primary key,
-user varchar(50) not null,
+username varchar(50) not null,
 senha varchar(100) not null,
 permissoes enum("1","2","3"),
 idUsuario int not null,
