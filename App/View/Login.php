@@ -1,3 +1,4 @@
+<?php $titulo = "XXXXX";?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -28,25 +29,27 @@ if($_POST){
     $logDao = new App\Dao\LoginDao();
     if($logDao->logar($log))
         header("Location: inicio.php");
+
 }
 ?>
 <div class="w3-container">
     <h1 style="text-align: center">Cadastro de Publicadores</h1>
 </div>
 <div id="miolo" class="w3-card-4">
-    <div class="w3-container w3-green">
+    <div class="w3-container w3-brown">
         <h5 style="text-align: center">Relatórios das Atividades dos Publicadores</h5>
     </div>
     <form class="w3-container" action="login.php" method="post">
+        <?php $class = 'class="w3-input w3-border w3-sand"';?>
         <p>
-            <input type="text" id="username" name="username" class="w3-input">
-            <label for="username">Usuário</label>
+            <label for="username"><b>Usuário</b></label>
+            <input type="text" id="username" name="username" <?php echo $class;?>>
         </p>
         <p>
-            <input type="password" id="senha" name="senha" class="w3-input">
-            <label for="senha">Senha</label>
+            <label for="senha"><b>Senha</b></label>
+            <input type="password" id="senha" name="senha" <?php echo $class;?>>
         </p>
-        <p><input type="submit" value="Acessar" class="w3-btn w3-teal"></p>
+        <p><input type="submit" value="Acessar" class="w3-btn w3-brown" onclick="mensagem()"></p>
     </form>
 </div>
 </body>

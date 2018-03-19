@@ -2,6 +2,8 @@
 
 namespace App\Dao;
 
+use App\Helper;
+
 class UsuarioDao extends Conexao
 {
     public function inserir($usuario){
@@ -82,6 +84,18 @@ class UsuarioDao extends Conexao
             return false;
         }
     }
+    public function pesquisarTodos($usuario){
+        $sql = "select idUsuario,nome from usuario order by nome";
+        try{
+            $p = $this->conexao->prepare($sql);
+            $p->execute();
+            $objeto = $p->fetchAll(\PDO::FETCH_ASSOC);
+            return $objeto;
+        }catch (\PDOException $e){
+            echo "<div class='alert alert-danger'{$e->getMessage()}</div>";
+            return false;
+        }
+    }
     public function pesquisaAjax($usuario){
         $sql = "select idUsuario,nome,cpf,telefone from usuario where nome like :nome";
         try{
@@ -89,6 +103,19 @@ class UsuarioDao extends Conexao
             $p->bindValue(":nome","%".$usuario->getNome()."%");
             $p->execute();
             $objeto = $p->fetchAll(\PDO::FETCH_ASSOC);
+            return $objeto;
+        }catch (\PDOException $e){
+            echo "<div class='alert alert-danger'{$e->getMessage()}</div>";
+            return false;
+        }
+    }
+    public function consulta_cpf($usuario){
+        $sql = "select * from usuario where cpf = :cpf";
+        try{
+            $p = $this->conexao->prepare($sql);
+            $p->bindValue(":cpf",Helper::setCPF($usuario->getCpf()));
+            $p->execute();
+            $objeto = $p->fetch(\PDO::FETCH_ASSOC);
             return $objeto;
         }catch (\PDOException $e){
             echo "<div class='alert alert-danger'{$e->getMessage()}</div>";

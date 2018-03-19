@@ -14,7 +14,7 @@ class Navegador
     }
     private function nav($permissao,$nome){
         $complemento = "";
-        $nav  = '<div class="w3-bar w3-light-'.$this->cor.'" style="font-weight: bold;">';
+        $nav  = '<div class="w3-bar w3-brown" style="font-weight: bold;">';
         $nav .= '<a href="inicio.php" '.$this->class.'>Início</a>';
         switch($permissao){
             case "1":
@@ -52,7 +52,8 @@ class Navegador
         $publicador .= $this->fimMenu();
         $relatorio  = $this->inicioMenu("Relatórios");
         $relatorio .= '<a href="inserir_relatorio.php" '.$this->class.'>Relatório</a>';
-        $relatorio .= '<a href="minhas_atividade.php" '.$this->class.'>Minhas Atividades</a>';
+        $relatorio .= '<a href="pesquisar_relatorio.php" '.$this->class.'>Pesquisar</a>';
+        $relatorio .= '<a href="minhas_atividades.php" '.$this->class.'>Minhas Atividades</a>';
         $relatorio .= $this->fimMenu();
         $nav = $publicador.$relatorio;
         return $nav;
@@ -61,20 +62,22 @@ class Navegador
         $publicador  = $this->inicioMenu("Publicadores");
         $publicador .= '<a href="inserir_publicador.php" '.$this->class.'>Inserir Publicador</a>';
         $publicador .= '<a href="pesquisar_publicador.php" '.$this->class.'>Pesquisar</a>';
+        $publicador .= '<a href="informacoes_pessoa.php" '.$this->class.'>Meus Dados</a>';
         $publicador .= $this->fimMenu();
         $relatorio = $this->inicioMenu("Relatórios");
         $relatorio .= '<a href="inserir_relatorio.php" '.$this->class.'>Relatório</a>';
-        $relatorio .= '<a href="minhas_atividade.php" '.$this->class.'>Minhas Atividades</a>';
+        $relatorio .= '<a href="pesquisar_relatorio.php" '.$this->class.'>Pesquisar</a>';
+        $relatorio .= '<a href="minhas_atividades.php" '.$this->class.'>Minhas Atividades</a>';
         $relatorio .= $this->fimMenu();
         $nav = $publicador.$relatorio;
         return $nav;
     }
     private function permissao3(){
         $publicador  = $this->inicioMenu("Publicadores");
-        $publicador .= '<a href="informacoes_pessoais.php" '.$this->class.'>Meus Dados</a>';
+        $publicador .= '<a href="informacoes_pessoa.php" '.$this->class.'>Meus Dados</a>';
         $publicador .= $this->fimMenu();
         $relatorio  = $this->inicioMenu("Relatórios");
-        $relatorio .= '<a href="minhas_atividade.php" '.$this->class.'>Minhas Atividades</a>';
+        $relatorio .= '<a href="minhas_atividades.php" '.$this->class.'>Minhas Atividades</a>';
         $relatorio .= $this->fimMenu();
         $nav = $publicador.$relatorio;
         return $nav;

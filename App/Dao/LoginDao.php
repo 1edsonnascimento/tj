@@ -11,7 +11,7 @@ class LoginDao extends Conexao
         try{
             $inserir = $this->conexao->prepare($sql);
             $inserir->bindValue(":username",$usuario->getUsername());
-            $inserir->bindValue(":senha",$usuario->getSenha());
+            $inserir->bindValue(":senha",Helper::criptografar($usuario->getSenha()));
             $inserir->bindValue(":permissoes",$usuario->getPermissoes());
             $inserir->bindValue(":idUsuario",$usuario->getIdUsuario());
             $inserir->execute();
@@ -28,7 +28,7 @@ class LoginDao extends Conexao
         try{
             $alterar = $this->conexao->prepare($sql);
             $alterar->bindValue(":username",$usuario->getUsername());
-            $alterar->bindValue(":senha",$usuario->getSenha());
+            $alterar->bindValue(":senha",Helper::criptografar($usuario->getSenha()));
             $alterar->bindValue(":permissoes",$usuario->getPermissoes());
             $alterar->bindValue(":idUsuario",$usuario->getIdUsuario());
             $alterar->bindValue(":idLogin",$usuario->getIdLogin());
@@ -55,7 +55,7 @@ class LoginDao extends Conexao
 
 
     public function logar($login){
-        $sql = "select l.idLogin, l.username,l.permissoes, u.nome from login as l inner join usuario as u on l.idUsuario = u.idUsuario where username = :username and senha = :senha";
+        $sql = "select l.idLogin, l.username,l.permissoes, u.idUsuario, u.nome from login as l inner join usuario as u on l.idUsuario = u.idUsuario where username = :username and senha = :senha";
         try{
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":username",$login->getUsername());
@@ -63,7 +63,7 @@ class LoginDao extends Conexao
             $consulta->execute();
             $resultado = $consulta->fetch();
             session_start();
-            $_SESSION['idLogin'] = $resultado['idLogin'];
+            $_SESSION['idLogin'] = $resultado['idUsuario'];
             $_SESSION['permissoes'] = $resultado['permissoes'];
             $_SESSION['nome'] = $resultado['nome'];
             return $resultado;
@@ -76,13 +76,14 @@ class LoginDao extends Conexao
     public function logoff(){
         session_start();
         unset($_SESSION['idLogin']);
+        unset($_SESSION['nome']);
         unset($_SESSION['permissoes']);
         session_destroy();
         header("Location: login.php");
     }
 
     public function statusLogin(){
-        if(empty($_SESSION['idLogin']))
+        if(empty($_SESSION['idLogin']) && empty($_SESSION['nome']) && empty($_SESSION['permissoes']))
             header("Location: login.php");
     }
 }
