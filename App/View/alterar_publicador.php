@@ -29,11 +29,9 @@ $titulo = "XXXXXXXXXX";
         $pub->setStatus(!empty($_POST['status']) ? $_POST['status'] : "Ativo");
         $pub->setObs(!empty($_POST['obs']) ? $_POST['obs'] : null);
         //o if abaixo só será realizado em caso do usuario dar uma de sabidao e retirar o required do campo nome
-        if($pub->getNome()==null || $pub->getCpf()==null) {
+        if($pub->getNome()==null) {
             if($pub->getNome()==null) {
                 echo "<div ".$class."><h5>O campo de nome deve ter o atributo 'required'</h5></div>";
-            }else if($pub->getCpf()==null){
-                echo "<div ".$class."><h5>O CPF É INVÁLIDO</h5></div>";
             }
         } else {
             $pd = new App\Dao\UsuarioDao();

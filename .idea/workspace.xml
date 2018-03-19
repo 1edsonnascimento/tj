@@ -53,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="consultar_por_nome.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="consultar_por_nome.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Ajax/consultar_por_nome.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="248">
@@ -106,6 +106,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="alterar_publicador.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/View/alterar_publicador.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+              <folding>
+                <marker date="1521468650653" expanded="true" signature="2550:2551" ph="..." />
+                <marker date="1521468650653" expanded="true" signature="2922:2945" ph="..." />
+                <marker date="1521468650653" expanded="true" signature="3177:3201" ph="..." />
+                <marker date="1521468650653" expanded="true" signature="3452:3535" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -131,7 +146,6 @@
         <option value="$PROJECT_DIR$/App/View/Rodape.php" />
         <option value="$PROJECT_DIR$/App/View/usuario_ajax.php" />
         <option value="$PROJECT_DIR$/App/View/excluir_publicador.php" />
-        <option value="$PROJECT_DIR$/App/View/alterar_publicador.php" />
         <option value="$PROJECT_DIR$/App/Dao/UsuarioDao.php" />
         <option value="$PROJECT_DIR$/App/Model/Relatorio.php" />
         <option value="$PROJECT_DIR$/App/View/inserir_relatorio.php" />
@@ -154,6 +168,7 @@
         <option value="$PROJECT_DIR$/App/Ajax/consultar_por_data.php" />
         <option value="$PROJECT_DIR$/App/View/pesquisar_relatorio.php" />
         <option value="$PROJECT_DIR$/vendor/w3/javascript.js" />
+        <option value="$PROJECT_DIR$/App/View/alterar_publicador.php" />
       </list>
     </option>
   </component>
@@ -288,12 +303,12 @@
       <option name="presentableId" value="Default" />
       <updated>1520553913537</updated>
       <workItem from="1520553914927" duration="7976000" />
-      <workItem from="1520598130026" duration="178915000" />
+      <workItem from="1520598130026" duration="179031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186891000" />
+    <option name="totallyTimeSpent" value="187007000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -615,19 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/alterar_publicador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="140" column="75" lean-forward="true" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="75" />
-          <folding>
-            <marker date="1521209209183" expanded="true" signature="2690:2691" ph="..." />
-            <marker date="1521209209183" expanded="true" signature="3062:3085" ph="..." />
-            <marker date="1521209209183" expanded="true" signature="3317:3341" ph="..." />
-            <marker date="1521209209183" expanded="true" signature="3592:3675" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Dao/LoginDao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -764,6 +766,19 @@
           <folding>
             <marker date="1521464540550" expanded="true" signature="608:672" ph="..." />
             <marker date="1521464540550" expanded="true" signature="608:704" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/alterar_publicador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding>
+            <marker date="1521468650653" expanded="true" signature="2550:2551" ph="..." />
+            <marker date="1521468650653" expanded="true" signature="2922:2945" ph="..." />
+            <marker date="1521468650653" expanded="true" signature="3177:3201" ph="..." />
+            <marker date="1521468650653" expanded="true" signature="3452:3535" ph="..." />
           </folding>
         </state>
       </provider>
