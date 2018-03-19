@@ -178,7 +178,6 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -303,12 +302,12 @@
       <option name="presentableId" value="Default" />
       <updated>1520553913537</updated>
       <workItem from="1520553914927" duration="7976000" />
-      <workItem from="1520598130026" duration="179031000" />
+      <workItem from="1520598130026" duration="179497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187007000" />
+    <option name="totallyTimeSpent" value="187473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
