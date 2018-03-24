@@ -49,6 +49,7 @@ class Navegador
         $publicador .= '<a href="inserir_usuario.php" '.$this->class.'>Novo Usuário</a>';
         $publicador .= '<a href="pesquisar_publicador.php" '.$this->class.'>Pesquisar</a>';
         $publicador .= '<a href="informacoes_pessoa.php" '.$this->class.'>Meus Dados</a>';
+        $publicador .= '<a href="email_senha.php" '.$this->class.'>Alterar Senha</a>';
         $publicador .= $this->fimMenu();
         $relatorio  = $this->inicioMenu("Relatórios");
         $relatorio .= '<a href="inserir_relatorio.php" '.$this->class.'>Relatório</a>';
@@ -63,6 +64,7 @@ class Navegador
         $publicador .= '<a href="inserir_publicador.php" '.$this->class.'>Inserir Publicador</a>';
         $publicador .= '<a href="pesquisar_publicador.php" '.$this->class.'>Pesquisar</a>';
         $publicador .= '<a href="informacoes_pessoa.php" '.$this->class.'>Meus Dados</a>';
+        $publicador .= '<a href="email_senha.php" '.$this->class.'>Alterar Senha</a>';
         $publicador .= $this->fimMenu();
         $relatorio = $this->inicioMenu("Relatórios");
         $relatorio .= '<a href="inserir_relatorio.php" '.$this->class.'>Relatório</a>';
@@ -75,6 +77,7 @@ class Navegador
     private function permissao3(){
         $publicador  = $this->inicioMenu("Publicadores");
         $publicador .= '<a href="informacoes_pessoa.php" '.$this->class.'>Meus Dados</a>';
+        $publicador .= '<a href="email_senha.php" '.$this->class.'>Alterar Senha</a>';
         $publicador .= $this->fimMenu();
         $relatorio  = $this->inicioMenu("Relatórios");
         $relatorio .= '<a href="minhas_atividades.php" '.$this->class.'>Minhas Atividades</a>';

@@ -8,6 +8,7 @@ class Login
     private $username;       //NOT NULL
     private $senha;      //NOT NULL
     private $permissoes;
+    private $email;
     private $idUsuario;
 
     /**
@@ -72,6 +73,22 @@ class Login
     public function setPermissoes($permissoes)
     {
         $this->permissoes = $permissoes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
     }
 
     /**

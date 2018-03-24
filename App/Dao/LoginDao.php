@@ -7,12 +7,13 @@ use App\Helper;
 class LoginDao extends Conexao
 {
     public function inserir($usuario){
-        $sql = "insert into login(username,senha,permissoes,idUsuario) values(:username,:senha,:permissoes, :idUsuario)";
+        $sql = "insert into login(username,senha,permissoes,email,idUsuario) values(:username,:senha,:permissoes,:email :idUsuario)";
         try{
             $inserir = $this->conexao->prepare($sql);
             $inserir->bindValue(":username",$usuario->getUsername());
             $inserir->bindValue(":senha",Helper::criptografar($usuario->getSenha()));
             $inserir->bindValue(":permissoes",$usuario->getPermissoes());
+            $inserir->bindValue(":senha",$usuario->getEmail());
             $inserir->bindValue(":idUsuario",$usuario->getIdUsuario());
             $inserir->execute();
             return true;
@@ -24,13 +25,14 @@ class LoginDao extends Conexao
 
 
     public function alterar($usuario){
-        $sql = "update login set username = :username,senha = :senha, permissoes = :permissoes,idUsuario = :idUsuario where idLogin = :idLogin";
+        $sql = "update login set username = :username,senha = :senha, permissoes = :permissoes,idUsuario = :idUsuario, email = :email where idLogin = :idLogin";
         try{
             $alterar = $this->conexao->prepare($sql);
             $alterar->bindValue(":username",$usuario->getUsername());
             $alterar->bindValue(":senha",Helper::criptografar($usuario->getSenha()));
             $alterar->bindValue(":permissoes",$usuario->getPermissoes());
             $alterar->bindValue(":idUsuario",$usuario->getIdUsuario());
+            $alterar->bindValue(":email",$usuario->getEmail());
             $alterar->bindValue(":idLogin",$usuario->getIdLogin());
             $alterar->execute();
             return true;
@@ -40,6 +42,20 @@ class LoginDao extends Conexao
         }
     }
 
+    public function alterar_email_senha($usuario){
+        $sql = "update login set email = :email,senha = :senha where idUsuario = :idUsuario";
+        try{
+            $alterar = $this->conexao->prepare($sql);
+            $alterar->bindValue(":email",$usuario->getEmail());
+            $alterar->bindValue(":senha",Helper::criptografar($usuario->getSenha()));
+            $alterar->bindValue(":idUsuario",$usuario->getIdUsuario());
+            $alterar->execute();
+            return true;
+        }catch(\PDOException $e){
+            echo "<div class='alert alert-danger'{$e->getMessage()}</div>";
+            return false;
+        }
+    }
     public function excluir($usuario){
         $sql = "delete from login where idLogin = :idLogin";
         try{

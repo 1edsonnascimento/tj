@@ -1,59 +1,12 @@
-<<<<<<< HEAD
 <?php include 'App/View/Cabecalho.php';?>
+<h1>Acesse a página com o seguinte endereco</h1>
+<h3>http://localhost:8080/tj/App/View/login.php</h3>
 
+<p>Usuário Cadastrado: 1Marco / Senha: 123456</p>
+<p>Usuário Cadastrado: 2Marco / Senha: 123456789</p>
+<p>Usuário Cadastrado: Edinho / Senha: abcd</p>
+
+<h5>Obs: Favor gravar dados no banco antes do acesso!!</h5>
 <?php include 'App/View/Rodape.php.php'; ?>
-=======
-<?php
-function validaCPF($cpf = null) {
 
-    // Verifica se um número foi informado
-    if(empty($cpf)) {
-        return false;
-    }
 
-    // Elimina possivel mascara
-    $cpf = str_replace('[^0-9]', '', $cpf);
-    $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
-
-    // Verifica se o numero de digitos informados é igual a 11
-    if (strlen($cpf) != 11) {
-        return false;
-    }
-    // Verifica se nenhuma das sequências invalidas abaixo
-    // foi digitada. Caso afirmativo, retorna falso
-    else if ($cpf == '00000000000' ||
-        $cpf == '11111111111' ||
-        $cpf == '22222222222' ||
-        $cpf == '33333333333' ||
-        $cpf == '44444444444' ||
-        $cpf == '55555555555' ||
-        $cpf == '66666666666' ||
-        $cpf == '77777777777' ||
-        $cpf == '88888888888' ||
-        $cpf == '99999999999') {
-        return false;
-        // Calcula os digitos verificadores para verificar se o
-        // CPF é válido
-    } else {
-
-        for ($t = 9; $t < 11; $t++) {
-
-            for ($d = 0, $c = 0; $c < $t; $c++) {
-                $d += $cpf{$c} * (($t + 1) - $c);
-            }
-            $d = ((10 * $d) % 11) % 10;
-            if ($cpf{$c} != $d) {
-                return false;
-            }
-        }
-        return true;
-    }
-}
-
-$cpf = validaCPF("74567845234");
-if($cpf == true){
-    echo "valido";
-}else{
-    echo "inválido";
-}
->>>>>>> 1ca3fbfde7f34624b9cf44e9a38a6492716a40ca

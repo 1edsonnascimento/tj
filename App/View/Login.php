@@ -36,6 +36,10 @@ if($_POST){
     <h1 style="text-align: center">Cadastro de Publicadores</h1>
 </div>
 <div id="miolo" class="w3-card-4">
+
+    <p>Usuário Cadastrado: 1Marco / Senha: 123456</p>
+    <p>Usuário Cadastrado: 2Marco / Senha: 123456789</p>
+    <p>Usuário Cadastrado: Edinho / Senha: abcd</p>
     <div class="w3-container w3-brown">
         <h5 style="text-align: center">Relatórios das Atividades dos Publicadores</h5>
     </div>

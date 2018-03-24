@@ -3,7 +3,7 @@
     $titulo = "Tela de Consulta de Publicador";
     include 'Cabecalho.php';
 ?>
-<?php include "../../vendor/autoload.php";
+<?php
     include '../../vendor/autoload.php';
     $verifica = new App\Dao\LoginDao();
     $verifica->statusLogin();
